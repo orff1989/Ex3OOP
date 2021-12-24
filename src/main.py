@@ -1,6 +1,6 @@
 from DiGraph import DiGraph
 from GraphAlgo import GraphAlgo
-
+import random
 
 def check():
     """
@@ -105,4 +105,11 @@ def check3():
 
 
 if __name__ == '__main__':
-    check()
+
+    g = DiGraph()
+    g1 = GraphAlgo(g)
+
+    print("_____________")
+    print(g1.load_from_json("C:\\Users\\orff1\\PycharmProjects\\Ex3OOP\\data\\A0.json"))
+    print(g1.graph)
+    # check()
