@@ -25,7 +25,11 @@ class GraphAlgo(GraphAlgoInterface):
         nodes={}
 
         for t in dict["Nodes"]:
-            pos = tuple(map(float, t["pos"].split(',')))
+            if t["pos"]!=None:
+                pos = tuple(map(float, t["pos"].split(',')))
+            else:
+                pos =(random.uniform(0,100),random.uniform(0,100),0)
+
             nodes[t["id"]]=Node(t["id"],pos)
             edges[t["id"]]={}
 
