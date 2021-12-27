@@ -9,59 +9,6 @@ This is a uml the projects:
 # Analysis of the performance of the algorithms:
 
 
-__Graph with 1,000 Nodes:__
-
-Time to build: 111 ms. 
-
-Time to run isConnected: 5 ms.
-
-Time to run shortestpath distance between node number 1 to node number 10 is: 25 ms
-
-Time to run center is:9568 
- 
-Time to run tsp is: 2 ms.
-
-
-
-__Graph with 10,000 Nodes:__
-
-Time to build: 318 ms. 
-
-Time to run isConnected: 27 ms.
-
-Time to run shortestpath distance between node number 1 to node number 10 is: 877 ms
-
-Time to run center is: 3461738
- 
-Time to run tsp is: 12 ms.
-
-
-
-__Graph with 100,000 Nodes:__
-
-Time to build: 2898 ms. 
-
-Time to run isConnected: 183 ms.
-
-Time to run shortestpath distance between node number 1 to node number 10 is: 823569 
-
-Time to run center is: 93263347 
- 
-Time to run tsp is: 172 ms.
-
-
-
-__Graph with 1,000,000 Nodes:__
-
-Time to build: 4946 ms. 
-
-Time to run isConnected: 433 ms.
-
-Time to run shortestpath distance between node number 1 to node number 10 is: 93263347475 
-
-Time to run center is: 4641 ms
- 
-Time to run tsp is: 3591 
 
 
 # How To Use:
