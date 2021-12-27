@@ -16,7 +16,7 @@ graph with 1,000 Nodes:
 ![Screenshot 2021-12-27 232312](https://user-images.githubusercontent.com/43110158/147508128-080c7d0a-e1d4-40e3-af4f-0393b710bbd4.png)
 
 # UML Diagram
-![Class Diagram](ClassDiagram.png)
+![Class Diagram](ClassesDiagram.png)
 
 # How To Use:
 
