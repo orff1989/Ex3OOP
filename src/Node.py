@@ -2,7 +2,7 @@
 class Node:
 
 
-    def __init__(self,_id, _pos : tuple):
+    def __init__(self,_id, _pos=None):
         self.pos=_pos;
         self.id=_id
 

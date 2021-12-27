@@ -9,11 +9,6 @@ class DiGraph(GraphInterface):
         self.Edges= {}
         self.mc = 0
 
-    # def __init__(self, _Nodes, _Edges):
-    #     self.Nodes=_Nodes
-    #     self.Edegs=_Edges
-    #     self.mc=0
-
     def v_size(self) -> int:
         return self.Nodes.__len__()
 
@@ -37,18 +32,29 @@ class DiGraph(GraphInterface):
             self.Nodes[node_id]=Node(node_id,pos)
             self.Edges[node_id]={}
             self.mc=self.mc+1
+            return True
 
     def remove_node(self, node_id: int) -> bool:
         if self.Nodes[node_id]!=None:
-            self.Nodes.pop(node_id)
+            del self.Nodes[node_id]
+            del self.Edges[node_id]
+            listToRemove=[]
+            for src, dest in self.Edges.items():
+                for key in dest.keys():
+                    if key==node_id:
+                        listToRemove.append((src,key))
+
+            for t in listToRemove:
+                self.remove_edge(t[0],t[1])
+
             self.mc = self.mc + 1
             return True
         else: return False
 
 
     def remove_edge(self, node_id1: int, node_id2: int) -> bool:
-        if node_id1 in self.Nodes.keys() and node_id2 in self.Nodes.keys():
-            self.Edges[node_id1][node_id2]=None
+        if self.Edges[node_id1][node_id2]!=None:
+            del self.Edges[node_id1][node_id2]
             self.mc = self.mc + 1
             return True
         else: return False

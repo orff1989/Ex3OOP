@@ -3,14 +3,16 @@ from src.GraphAlgoInterface import GraphAlgoInterface
 from src.DiGraph import DiGraph
 from src.Node import Node
 import json, random
+import matplotlib.pyplot as plt
+import numpy as np
 import GraphAlgo
 import functools
 import operator
 
 class GraphAlgo(GraphAlgoInterface):
 
-    def __init__(self, _graph: GraphInterface):
-        self.graph = _graph
+    def __init__(self):
+       self.graph=DiGraph()
 
     def get_graph(self) -> GraphInterface:
         return self.graph
@@ -25,19 +27,19 @@ class GraphAlgo(GraphAlgoInterface):
         nodes={}
 
         for t in dict["Nodes"]:
-            if t["pos"]!=None:
+            if len(t.keys())!=1:
                 pos = tuple(map(float, t["pos"].split(',')))
             else:
-                pos =(random.uniform(0,100),random.uniform(0,100),0)
+                pos = (random.randint(0,50),random.randint(0,50),0)
 
-            nodes[t["id"]]=Node(t["id"],pos)
             edges[t["id"]]={}
-
+            nodes[t["id"]] = Node(t["id"], pos)
         for t in dict["Edges"]:
             edges[t["src"]][t["dest"]]=t["w"]
 
         self.graph.Edges=edges
         self.graph.Nodes=nodes
+        self.graph.mc=0
         return True
 
     def save_to_json(self, file_name: str) -> bool:  # need to work on
@@ -117,6 +119,7 @@ class GraphAlgo(GraphAlgoInterface):
     def shortest_path(self, id1: int, id2: int) -> (float, list):
         if id1 == id2:
             return 0, None
+
         distance, thePath = self.dijkDist(id1)
 
         if distance[id2] == -1 or distance[id2] == float('inf'):
@@ -238,4 +241,12 @@ class GraphAlgo(GraphAlgoInterface):
         return index, min
 
     def plot_graph(self) -> None:
-        pass
+        for src in self.graph.Nodes.values():
+            x, y, z =src.pos
+            plt.plot(x,y,markersize=10, marker="o", color="red")
+            plt.text(x, y,  str(src.id), color="blue", fontsize=12)
+
+            for dest in self.graph.Edges[src.id]:
+                n_x, n_y , n_z= self.graph.Nodes[dest].pos
+                plt.annotate("",xy=(x,y),xytext=(n_x,n_y),arrowprops=dict(arrowstyle="<-"))
+        plt.show()
