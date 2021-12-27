@@ -4,6 +4,9 @@ In this project, you can load graphs from json files, edit the graph and run som
 
 This is a uml the projects:
 
+graph with 1,000 Nodes:
+
+![Screenshot 2021-12-27 223355](https://user-images.githubusercontent.com/43110158/147508451-0958ec2e-b77b-4b56-80c3-56ba358ba13f.png)
 
 
 # Analysis of the performance of the algorithms:
