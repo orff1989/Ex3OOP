@@ -4,6 +4,7 @@ from src.Node import Node
 
 class DiGraph(GraphInterface):
 
+    #constructor of the graph
     def __init__(self):
         self.Nodes= {}
         self.Edges= {}
@@ -18,6 +19,7 @@ class DiGraph(GraphInterface):
             sum = sum + len(v)
         return sum
 
+    # returns counter changes of the graph
     def get_mc(self) -> int:
         return self.mc
 

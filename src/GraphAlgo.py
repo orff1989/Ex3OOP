@@ -11,12 +11,15 @@ import operator
 
 class GraphAlgo(GraphAlgoInterface):
 
+    #constructor of GraphAlgo
     def __init__(self):
        self.graph=DiGraph()
 
+    #returns the graph
     def get_graph(self) -> GraphInterface:
         return self.graph
 
+    #this method loads new graph from json file
     def load_from_json(self, file_name: str) -> bool:
         dict = {}
         gr = DiGraph()
@@ -30,19 +33,20 @@ class GraphAlgo(GraphAlgoInterface):
             if len(t.keys())!=1:
                 pos = tuple(map(float, t["pos"].split(',')))
             else:
-                pos = (random.randint(0,50),random.randint(0,50),0)
+                pos = (random.randint(0,50),random.randint(0,50),0) #if there is no position, assging a random position
 
             edges[t["id"]]={}
             nodes[t["id"]] = Node(t["id"], pos)
         for t in dict["Edges"]:
             edges[t["src"]][t["dest"]]=t["w"]
 
-        self.graph.Edges=edges
+        self.graph.Edges=edges #init the grpah
         self.graph.Nodes=nodes
         self.graph.mc=0
         return True
 
-    def save_to_json(self, file_name: str) -> bool:  # need to work on
+    # this method saves the graph to json file
+    def save_to_json(self, file_name: str) -> bool:
         Edges = []
         tup = {}
         for src, v in self.graph.Edges.items():
@@ -67,10 +71,11 @@ class GraphAlgo(GraphAlgoInterface):
         gr["Nodes"] = Nodes
         with open(file_name, "w") as f:
             jsonStringEdges = json.dumps(gr)
-            f.write(jsonStringEdges)
+            f.write(jsonStringEdges) #writes a to the json file
             return True
         return False
 
+    #this method returns all the shortest path from the given source and its distance
     def dijkDist(self, src) -> (list, list):
         visi = []
         distance = []
@@ -98,7 +103,7 @@ class GraphAlgo(GraphAlgoInterface):
                     distance[o] = tempLenghth
                     thePath[o] = []
                     thePath[o] = thePath[thisNode].copy()
-                    thePath[o].append(self.graph.Nodes[thisNode])
+                    thePath[o].append(self.graph.Nodes[thisNode]) #adds the new node to the path
 
             if mySet.__contains__(thisNode):
                 mySet.remove(thisNode)
@@ -116,6 +121,7 @@ class GraphAlgo(GraphAlgoInterface):
             thisNode = j
         return distance, thePath
 
+    #this method returns the shortest path from the given source and destination
     def shortest_path(self, id1: int, id2: int) -> (float, list):
         if id1 == id2:
             return 0, None
@@ -133,12 +139,14 @@ class GraphAlgo(GraphAlgoInterface):
         finalPath.append(id2)
         return distance[id2], finalPath
 
+    #this method checking if every node in the list was visited
     def allVisited(self, node_lst, visi):
         for n in node_lst:
             if visi[n] == False:
                 return False
         return True
 
+    #this method returns the closest and lightest node from a given node
     def theLightNextNodeNotVisited(self, curr, visi: dict) -> int:
         if curr == -1: return -1
         index = -1
@@ -154,6 +162,7 @@ class GraphAlgo(GraphAlgoInterface):
 
         return index
 
+    # this method returns lightest node from a given node
     def theLightNextNode(self, nodeId):
         if nodeId == -1: return -1
         index = -1
@@ -169,6 +178,7 @@ class GraphAlgo(GraphAlgoInterface):
 
         return index
 
+    #this method returns the weight of the givien list
     def sumOfW(self, thePath: list) -> float:
         sum = 0
         prev = thePath[0]
@@ -179,6 +189,7 @@ class GraphAlgo(GraphAlgoInterface):
             prev = i
         return sum
 
+    # this method finds the shortest path that visits all the nodes in the list
     def TSP(self, node_lst: list[int]) -> (list[int], float):
         visi = {}
         thePath = []
@@ -211,6 +222,7 @@ class GraphAlgo(GraphAlgoInterface):
         sumOfWw = self.sumOfW(thePath)
         return thePath, sumOfWw
 
+    #this method returns list of the largest path
     def eccentricity(self):
         ecc = []
         for k in range(self.graph.v_size()):
@@ -224,6 +236,7 @@ class GraphAlgo(GraphAlgoInterface):
                         ecc[i] = dist
         return ecc
 
+    # this method returns the node that has the shortest distance to it's farthest node.
     def centerPoint(self) -> (int, float):
         dist1 = self.eccentricity()
         dist = {}
@@ -240,6 +253,7 @@ class GraphAlgo(GraphAlgoInterface):
 
         return index, min
 
+    # this method plots the graph
     def plot_graph(self) -> None:
         for src in self.graph.Nodes.values():
             x, y, z =src.pos
