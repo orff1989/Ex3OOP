@@ -32,10 +32,31 @@ Each DiGraph contain dictionary of his nodes, and each node contain his edges.\
 In addition each DiGraph holds the number of edges in the graph and a mode counter (mc)\
 that represent the number of changes (add node, add edge, remove node or remove edge) in the graph.
 
+
+| **Main methods**      |    **Details**        |
+|-----------------|-----------------------|
+| `v_size()` | Returns the number of vertices in this graph |
+| `e_size()` | Returns the number of edges in this graph |
+| `get_mc()` | Returns the current version of this graph |
+| `add_edge()` | Adds an edge to the graph |
+| `add_node()` | Adds a node to the graph |
+| `remove_node()` | Removes a node from the graph |
+| `remove_edge()` | Removes an edge from the graph |
+
+
+
 ## GraphAlgo class - implenents GraphAlgoInterface
 This class implement GraphAlgoInterface abstract class that represents an interface of a graph.\
 Each GraphAlgo contain a DiGraph on which the algorithm works on.
 
+
+| **Main methods**      |    **Details**        |
+|-----------------|-----------------------|
+| `get_graph()` | Rutern the directed graph on which the algorithm works on |
+| `load_from_json()` | Loads a graph from a json file |
+| `save_to_json()` | Saves the graph in JSON format to a file |
+| `shortest_path()` | Returns the shortest path from node id1 to node id2 using Dijkstra's Algorithm |
+| `plot_graph()` | Plots the graph |
 
 ## External info:
 - More about graph : https://en.wikipedia.org/wiki/Directed_graph
