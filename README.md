@@ -1,10 +1,12 @@
-![ArielLogo](docs/ArielLogo.png)
+![image](https://user-images.githubusercontent.com/93159965/147562147-754a2b7c-d5d0-44c8-b6d9-a37ce5fc1b44.png)
+
 # Assignment 3
 
 > Made by Or Finberg and Eitan Wechsler
 >
 > GitHub pages:  
 > [https://github.com/orff1989](https://github.com/orff1989)
+> 
 > [https://github.com/EitanWex](https://github.com/EitanWex)
 
 
