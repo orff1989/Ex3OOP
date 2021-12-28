@@ -34,7 +34,6 @@ This is a uml of the project:
 
 ### GUI:
 Running the plot_graph() in the GraphAlgo class.
-How to use the buttons:
 
 ### Download and Run
 To get this project you need to clone it into a Pycharm project.
