@@ -1,3 +1,13 @@
+![ArielLogo](docs/ArielLogo.png)
+# Assignment 3
+
+> Made by Or Finberg and Eitan Wechsler
+>
+> GitHub pages:  
+> [https://github.com/orff1989](https://github.com/orff1989)
+> [https://github.com/EitanWex](https://github.com/EitanWex)
+
+
 # Graph Drawer - python
 In this project, we were tasked to recreate our work from the previous assignment (written in Java) to Python.
 
