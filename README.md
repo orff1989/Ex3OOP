@@ -83,22 +83,27 @@ Each GraphAlgo contain a DiGraph on which the algorithm works on.
 | `eccentricity()` |  returns list of the largest pathh |
 | `plot_graph()` | Plots the graph |
 
-### Algorithm used:
-* dijkstra(self, src, dest) -> (float, list) :
-This method based on Dijkstra's algorithm.
-Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a graph.
-In other words it finds the shortest paths between the source node and the destination node.
-The method stored a distance dictionary represent each node weight, in the beginning initialized to infinity.
-In each step the method update his current distance from the source node.
-In addition it stored a dictionary represent each node "father", meaning the node through which we discovered this node.
-Update the source node weight to be 0 and push him into a queue.
-Pop the node with the minimum weight from the queue.
-Visit each one of this nodes neighbors:
-Check if his current weight is more then the distance between the node and the source node, if so, update his weight and updates his "father" to be the node's id from which he came to.
-After going through all the neighbors of the node, If the current node that pop out from the queue is the destination node we finish.
-Otherwise repeat these steps until the queue is empty.
-If the dest node weight is infinity it means there is no path between src node and dest node, return infinity and empty list.
-Otherwise returns the weight of the dest node that represent the distance between the two nodes, return the path between them and the distance.
+###### private methods
+* `dijkstra(self, src, dest) -> (float, list)` : \
+This method based on Dijkstra's algorithm.\
+Dijkstra's algorithm is an algorithm for finding the shortest paths between nodes in a graph.\
+In other words it finds the shortest paths between the source node and the destination node.\
+The method stored a distance dictionary represent each node weight, in the beginning initialized to infinity.\
+In each step the method update his current distance from the source node.\
+In addition it stored a dictionary represent each node "father", meaning the node through which we
+discovered this node.\
+Update the source node weight to be 0 and push him into a queue.\
+Pop the node with the minimum weight from the queue.\
+Visit each one of this nodes neighbors:\
+Check if his current weight is more then the distance between the node and the source node,
+if so, update his weight and updates his "father" to be the node's id from which he came to.\
+After going through all the neighbors of the node,
+If the current node that pop out from the queue is the destination node we finish.\
+Otherwise repeat these steps until the queue is empty.\
+If the dest node weight is infinity it means there is no path between src node and dest node,
+return infinity and empty list.\
+Otherwise returns the weight of the dest node that represent the distance between the two nodes,
+return the path between them and the distance.\
 Complexity: O((|V|+|E|)log|V|), |V|=number of nodes, |E|=number of edges.
 ## External info:
 - More about graph : https://en.wikipedia.org/wiki/Directed_graph
