@@ -33,7 +33,7 @@ In addition each DiGraph holds the number of edges in the graph and a mode count
 that represent the number of changes (add node, add edge, remove node or remove edge) in the graph.
 
 ## GraphAlgo class - implenents GraphAlgoInterface
-his class implement GraphAlgoInterface abstract class that represents an interface of a graph.\
+This class implement GraphAlgoInterface abstract class that represents an interface of a graph.\
 Each GraphAlgo contain a DiGraph on which the algorithm works on.
 
 
