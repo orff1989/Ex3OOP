@@ -1,6 +1,7 @@
 # Graph Drawer - python
+In this project, we were tasked to recreate our work from the previous assignment (written in Java) to Python.
 
-In this project, you can load graphs from json files, edit the graph and run some algorithms on the graph.
+As you'll see, in this project, you can load graphs from json files, edit the graph and run some algorithms on the graph.
 
 ![Screenshot 2021-12-27 233547](https://user-images.githubusercontent.com/43110158/147508794-28eb6cbd-c2db-4b65-89f7-97b7fc79d2c7.png)
 
