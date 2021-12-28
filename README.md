@@ -74,7 +74,10 @@ Each GraphAlgo contain a DiGraph on which the algorithm works on.
 | `load_from_json()` | Loads a graph from a json file |
 | `save_to_json()` | Saves the graph in JSON format to a file |
 | `shortest_path()` | Returns the shortest path from node id1 to node id2 using Dijkstra's Algorithm |
+| `TSP()` | Finds the shortest path that visits all the nodes in the list |
+| `centerPoint()` |   Finds the node that has the shortest distance to it's farthest node. |
 | `plot_graph()` | Plots the graph |
+
 
 ## External info:
 - More about graph : https://en.wikipedia.org/wiki/Directed_graph
