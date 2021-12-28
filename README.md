@@ -26,6 +26,8 @@ Graph with 1,000 Nodes:
 
 ![Screenshot 2021-12-27 232312](https://user-images.githubusercontent.com/43110158/147508128-080c7d0a-e1d4-40e3-af4f-0393b710bbd4.png)
 
+PC specifications: CPU: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz 2.30 GHz, Ram:16GB, Operating System: Windows 11 64bit.
+
 # UML Diagram
 
 This is a uml of the project:
