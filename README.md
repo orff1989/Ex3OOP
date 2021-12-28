@@ -32,9 +32,18 @@ This is a uml of the project:
 
 ![Class Diagram](ClassesDiagram.png)
 
-# How To Use:
+### GUI:
+Running the plot_graph() in the GraphAlgo class.
+How to use the buttons:
+1. Reset changes button : This button reset the graph to the default. 
+2. Center button : This button prints the center node on the graph.
+3. ShortestPath button : This button ask from the user to insert two nodes (integers) and print the shortest path on the graph.
+4. TSP button : This button ask from the user to insert two or more nodes (integers) and print the TSP path on the graph.
 
-__1. Clone this repository:__
+### Download and Run
+To get this project you need to clone it into a Pycharm project.
+
+Next, to run it, you need to go to main.py file.
 
 ## DiGraph class - implements GraphInterface
 
