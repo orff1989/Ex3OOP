@@ -75,7 +75,12 @@ Each GraphAlgo contain a DiGraph on which the algorithm works on.
 | `save_to_json()` | Saves the graph in JSON format to a file |
 | `shortest_path()` | Returns the shortest path from node id1 to node id2 using Dijkstra's Algorithm |
 | `TSP()` | Finds the shortest path that visits all the nodes in the list |
-| `centerPoint()` |   Finds the node that has the shortest distance to it's farthest node. |
+| `centerPoint()` |   Finds the node that has the shortest distance to it's farthest node |
+| `dijkDist()` |  returns all the shortest path from the given source and its distance |
+| `theLightNextNodeNotVisited()` | returns the closest and lightest node from a given node |
+| ` theLightNextNode()` | returns lightest node from a given node |
+| `sumOfW()` | returns the weight of the givien list |
+| `eccentricity()` |  returns list of the largest pathh |
 | `plot_graph()` | Plots the graph |
 
 
